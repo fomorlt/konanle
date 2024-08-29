@@ -38,6 +38,11 @@ export function getSortedPostData() {
   
   //return posts by date 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));  //can't do this, data doesn't necessarily have a date property. How do we ...
+
+  // TODO: figure out the return posts sorted by date object. Might need to utilize typescript here, to ensure that the type returned by the function has the date property.
+  // interfaces! and stuff. At first I was thinking of seeing if there was some sort of type i could download from npm, but its just been a while since i've worked
+  // on this. I forgot that 'date' is part of the matter standard that I have set for myself. 
+  // I want there to be a title, a date, ant an array of tags.
 }
 
 /*

@@ -10,6 +10,9 @@ import matter from "gray-matter";
 const postsDirectory = path.join(process.cwd(), "content/blog");
 
 export function getSortedPostData() {
+  // new plan: function will return 2 things - list of posts, and parsed tags. 
+  // tags will be used for the type of post we want
+  // list of posts will be used for the actual display of stuff
   const fileNames = fs.readdirSync(postsDirectory); //outputs an array of filename strings
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, ""); //replaces .md extension with nothing
@@ -17,9 +20,24 @@ export function getSortedPostData() {
     const fullPath = path.join("postsDirectory, fileName"); //creates filepath
     const fileContents = fs.readFileSync(fullPath, "utf8"); //grabs all data from markdown file
 
-    const matterResult = matter(fileContents); //grabs header metadata stuff from markdown
-    return {};
+    const matterResult = matter(fileContents); //returns an object with properties 'data', 'content', etc. 
+    // alternatively, look at the documentation
+    // https://www.npmjs.com/package/gray-matter
+    // look at the '.read' section
+    // that way, we wouldn't have to do all this .md stuff - maybe we could just start with the top stuff
+    // wait, this script is still necessary to populate the list of posts... hm how do we do this?
+    // ok 
+
+    //returns id (the filename), and the data from the markdown file (just the frontmatter, like title and tags (which will be an array))
+    return {
+      id,
+      ...matterResult.data
+    };
   });
+
+  
+  //return posts by date 
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));  //can't do this, data doesn't necessarily have a date property. How do we ...
 }
 
 /*

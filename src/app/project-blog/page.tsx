@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Post, getSortedPostData } from "../../lib/post-fetch";
 
 export default function ProjectBlogPage() {
   // Placeholder project blogs
@@ -17,8 +18,13 @@ export default function ProjectBlogPage() {
             <Link href={`/project-blog/${project.id}`}>{project.title}</Link>
           </li>
         ))}
+        <li>
+          <Link href="/project-blog/web-development">
+            Web Development Projects
+          </Link>
+        </li>
       </ul>
-      <br/>
+      <br />
       <Link href="/">Back to Home</Link>
     </div>
   );

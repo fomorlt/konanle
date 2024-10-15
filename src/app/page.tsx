@@ -21,6 +21,9 @@ export default function LandingPage() {
           <li>
             <Link href="/project-blog">Project Blog</Link>
           </li>
+          <li>
+            <Link href="/soapbox-blog">Soapbox Blog</Link>
+          </li>
         </ul>
       </nav>
     </div>

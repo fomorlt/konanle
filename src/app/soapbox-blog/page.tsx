@@ -13,7 +13,7 @@ export default function ProjectBlogPage() {
     <div>
       <h1>Welcome to Konan's Soapbox!</h1>
       <br />
-      <p>Where I write about anything on my mind :D</p>
+      <p>Where I write and wax sentimental about anything on my mind :D</p>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>

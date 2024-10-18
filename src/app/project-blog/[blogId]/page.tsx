@@ -5,6 +5,10 @@ export default function ProjectBlogDetailPage({
 }: {
   params: { blogId: string };
 }) {
+  //just for self note, params: {blogId} is destructuring blogid out of params so I don't ahve to type params.blogid
+  // the stuff after colon is just typescript, making sure that blogid is a string
+
+  
   return (
     <div>
       <h1>{`Blog: ${blogId}`}</h1>

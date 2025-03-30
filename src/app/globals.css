@@ -1,6 +1,10 @@
-@tailwind base;
+/* tailwind was overwriting CSS in my entire app.
+be sure to uncomment this and the stuff at the bottom if we want to use tailwind
+*/
+
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -26,8 +30,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
